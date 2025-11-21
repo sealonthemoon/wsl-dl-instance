@@ -28,7 +28,7 @@ echo "---------------------------------------------"
 
 echo "==> Updating paths in scripts..."
 sudo chmod +x "$DIR"/*.sh
-sudo "$DIR/setup.sh"
+sudo "$DIR/setup.sh" "$DIR"
 echo "==> Done!"
 echo "---------------------------------------------"
 
