@@ -1,104 +1,77 @@
-# ubuntu-download-server
+# wsl-dl-instance
 
-Solution on Ubuntu for downloading content
+Complete solution for downloading YouTube audio.
+
+## Semi-automated installation
+
+### Prerequisites
+
+For this setup, we will use WSL.
+
+To check if WSL is installed, type the following command in a PowerShell window:
+
+```terminal
+wsl --list --online
+```
+
+Install WSL using:
+
+```terminal
+wsl --install
+```
+
+Make sure to run the above command with Administrator priviledges.
+
+Next, list available packages and install an Ubuntu instance:
+
+```terminal
+wsl --list --online # Available instances
+wsl --list # Installed instances
+wsl --install Ubuntu
+wsl
+```
+
+Go through the configuration setup.
+
+Once finished, navigate to the user home folder and install basic packages needed to deploy:
+
+```terminal
+seal@dseal:/mnt/c/Users/sealo$ cd ~
+seal@dseal:~$ pwd
+/home/seal
+seal@dseal:~$ sudo apt install git -y
+```
+
+Clone the Github repo:
+
+```terminal
+seal@dseal:~$ git clone https://github.com/sealonthemoon/wsl-dl-instance.git
+```
+
+### Run automated script
+
+Run the installation script:
+
+```terminal
+seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh
+seal@dseal:~$ sudo ./wsl-dl-instance/install.sh
+```
+
+All done!
+
+## Files
+
+- audio/ : directory that holds all audio downloaded by the text file method.
+- commands : usage guide
+- dl.txt : download text file list, only YT URLs allowed
+- empty.sh : deletes all files in the download folder
+- mp3.sh : download list of mp3s, defined in dl.txt
+- wav.sh : download list of wavs, defined in dl.txt
+- owner.sh : make yourself owner of all files in the directory
+- setup.sh : change path in all scripts and usage guide to ~
+- youtube-dl : download application
 
 ## References
 
 - Install guide: https://itsfoss.com/download-youtube-linux/#download-youtube-videos-in-various-formats-and-quality-size
 - Source code: https://github.com/ytdl-org/ytdl-nightly/releases
-
-## Installation
-
-This installation guide will use **Ubuntu-24.04**.
-
-1. wsl --install "Ubuntu-24.04"
-2. wsl -d "Ubuntu-24.04"
-
-Install packages:
-
-- sudo apt update -y && sudo apt upgrade -y
-- sudo apt install -y build-essential git wget nano make ffmpeg
-
-Clone repo:
-
-- cd ~
-- git clone https://github.com/sealonthemoon/ubuntu-download-server.git
-
-### Setup
-
-- cd ~/ubuntu-download-server
-- sudo cp youtube-dl /usr/local/bin/
-- sudo chmod a+rx /usr/local/bin/youtube-dl
-- alias youtube-dl='python3 /usr/local/bin/youtube-dl'
-- youtube-dl -U
-
-### Usage
-
-cleardl.sh : clear 'dl' download folder
-
-clearlist.sh : clear 'dllist' entries
-
-clearplaylist.sh : clear 'dlplaylist' entries
-
-dl : download folder
-
-dllist : list of youtube URLS (videos/music)
-
-dlplaylist : list of youtube URLS (playlists)
-
-execlist.sh : download URLS in dllist
-
-execplaylist.sh : download URLS in dlplaylist
-
-youtube-dl : python script used for downloading
-
-#### Change Path
-
-Scripts to edit:
-
-- execlist.sh
-- execplaylist.sh
-
-Steps:
-
-1. sudo nano execlist.sh
-2. INPUT_FILE="/home/seal/dllist" -> INPUT_FILE="YOUR/PATH/dllist"
-3. DOWNLOAD_FOLDER="/home/seal/dl" -> DOWNLOAD_FOLDER="YOUR/PATH/dl"
-4. CTRL + S, CTRL X
-
-Scripts to edit:
-
-- cleardl.sh
-- clearlist.sh
-- clearplaylist.sh
-
-Steps:
-
-1. sudo nano cleardl.sh
-2. FOLDER="/home/seal/dl" -> FOLDER="YOUR/PATH/dl"
-3. USER="seal" -> USER="USERNAME"
-4. CTRL + S, CTRL X
-
-Make executable scripts:
-
-- sudo chmod +x *.sh
-
-#### Execute script
-
-To download youtube audio files, paste the urls in dllist. Next, execute the script
-
-- sudo echo "URL" >> dllist
-- sudo ./execlist.sh
-
-To download a playlist, paste the url(s) in dlplaylist.
-
-- sudo echo "URL" >> dlplaylist
-- sudo ./execplaylist.sh
-
-All downloads will be saved in dl.
-
-#### Clear scripts
-
-- Clear dl folder : sudo ./cleardl.sh
-- Clear dllist entries : sudo ./clearlist.sh
-- Clear dlplaylist entries : sudo ./clearplaylist.sh
