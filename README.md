@@ -10,13 +10,13 @@ For this setup, we will use WSL.
 
 To check if WSL is installed, type the following command in a PowerShell window:
 
-```terminal
+```Powershell
 wsl --list --online
 ```
 
 Install WSL using:
 
-```terminal
+```Powershell
 wsl --install
 ```
 
@@ -24,40 +24,67 @@ Make sure to run the above command with Administrator priviledges.
 
 Next, list available packages and install an Ubuntu instance:
 
-```terminal
-wsl --list --online # Available instances
-wsl --list # Installed instances
-wsl --install Ubuntu # Install Ubuntu
-wsl # Open WSL after install
+```Powershell
+wsl --list --online     # Available images
+wsl --list              # Installed images
+wsl --install Ubuntu    # Install Ubuntu
+wsl                     # Open WSL Ubuntu
 ```
 
 Go through the configuration setup.
 
 Once finished, navigate to the user home folder and install basic packages needed to deploy:
 
-```terminal
+*example*
+
+```bash
 seal@dseal:/mnt/c/Users/sealo$ cd ~
 seal@dseal:~$ pwd
 /home/seal
 seal@dseal:~$ sudo apt install git -y
 ```
 
+*copy*
+
+```bash
+cd ~
+```
+
+```bash
+sudo apt install git -y
+```
+
 Clone the Github repo:
 
-```terminal
-seal@dseal:~$ git clone https://github.com/sealonthemoon/wsl-dl-instance.git
+```bash
+git clone https://github.com/sealonthemoon/wsl-dl-instance.git
 ```
 
 ### Run automated script
 
 Run the installation script:
 
-```terminal
+*example*
+
+```bash
 seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh
 seal@dseal:~$ D=$(pwd)
 seal@dseal:~$ sudo ./wsl-dl-instance/install.sh $D
 ```
 
+*copy*
+
+```bash
+sudo chmod +x ./wsl-dl-instance/install.sh
+```
+
+```bash
+D=$(pwd)
+```
+
+```bash
+sudo ./wsl-dl-instance/install.sh $D
+```
 All done!
 
 ## Files
