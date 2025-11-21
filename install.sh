@@ -12,20 +12,30 @@ sudo apt install -y git nano wget ffmpeg pip python3
 echo "Done!"
 
 echo "Installing youtube-dl..."
-sudo cp $REPO/youtube-dl /usr/local/bin/
+sudo cp "$REPO/youtube-dl" /usr/local/bin/
 sudo chmod a+rx /usr/local/bin/youtube-dl
 alias youtube-dl='python3 /usr/local/bin/youtube-dl'
 alias ydl='python3 /usr/local/bin/youtube-dl'
 echo "Done!"
 
 echo "Moving files to $DIR..."
-sudo cp -r $REPO/* $DIR
+sudo cp -r "$REPO"/* "$DIR"
 echo "Done!"
 
 echo "Cleaning up..."
-sudo rm -rf $REPO
-sudo rm -r $DIR/youtube-dl
-cd $DIR | ls
+sudo rm -rf "$REPO"
+sudo rm -r "$DIR/youtube-dl"
+cd "$DIR" | ls
+echo "Done!"
+
+echo "Making user owner..."
+sudo chmod +x "$DIR"/*.sh
+sudo "$DIR/owner.sh"
+echo "Done!"
+
+echo "Updating paths in scripts..."
+sudo chmod +x "$DIR"/*.sh
+sudo "$DIR/setup.sh"
 echo "Done!"
 
 echo "---------------------------------------------"

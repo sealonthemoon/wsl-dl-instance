@@ -27,8 +27,8 @@ Next, list available packages and install an Ubuntu instance:
 ```terminal
 wsl --list --online # Available instances
 wsl --list # Installed instances
-wsl --install Ubuntu
-wsl
+wsl --install Ubuntu # Install Ubuntu
+wsl # Open WSL after install
 ```
 
 Go through the configuration setup.
@@ -54,7 +54,7 @@ Run the installation script:
 
 ```terminal
 seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh
-seal@dseal:~$ sudo ./wsl-dl-instance/install.sh
+seal@dseal:~$ D=$(pwd) | sudo ./wsl-dl-instance/install.sh
 ```
 
 All done!
