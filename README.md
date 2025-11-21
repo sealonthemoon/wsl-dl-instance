@@ -67,24 +67,15 @@ Run the installation script:
 *example*
 
 ```bash
-seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh
-seal@dseal:~$ D=$(pwd)
-seal@dseal:~$ sudo ./wsl-dl-instance/install.sh $D
+seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh && D=$(pwd) && sudo ./wsl-dl-instance/install.sh "$D"
 ```
 
 *copy*
 
 ```bash
-sudo chmod +x ./wsl-dl-instance/install.sh
+sudo chmod +x ./wsl-dl-instance/install.sh && D=$(pwd) && sudo ./wsl-dl-instance/install.sh "$D"
 ```
 
-```bash
-D=$(pwd)
-```
-
-```bash
-sudo ./wsl-dl-instance/install.sh $D
-```
 All done!
 
 ## Files
