@@ -28,14 +28,14 @@ sudo rm -r "$DIR/youtube-dl"
 cd "$DIR" | ls
 echo "Done!"
 
-echo "Making user owner..."
-sudo chmod +x "$DIR"/*.sh
-sudo "$DIR/owner.sh"
-echo "Done!"
-
 echo "Updating paths in scripts..."
 sudo chmod +x "$DIR"/*.sh
 sudo "$DIR/setup.sh"
+echo "Done!"
+
+echo "Making user owner..."
+sudo chmod +x "$DIR"/*.sh
+sudo "$DIR/owner.sh"
 echo "Done!"
 
 echo "---------------------------------------------"

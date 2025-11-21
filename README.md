@@ -54,7 +54,8 @@ Run the installation script:
 
 ```terminal
 seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh
-seal@dseal:~$ D=$(pwd) | sudo ./wsl-dl-instance/install.sh
+seal@dseal:~$ D=$(pwd)
+seal@dseal:~$ sudo ./wsl-dl-instance/install.sh $D
 ```
 
 All done!
