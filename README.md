@@ -1,4 +1,4 @@
-# wsl-dl-instance
+# wsl-ubuntu-youtube-dl
 
 Complete solution for downloading YouTube audio.
 
@@ -57,7 +57,7 @@ sudo apt install git -y
 Clone the Github repo:
 
 ```bash
-git clone https://github.com/sealonthemoon/wsl-dl-instance.git
+git clone https://github.com/sealonthemoon/wsl-ubuntu-youtube-dl.git
 ```
 
 ### Run automated script
@@ -67,13 +67,13 @@ Run the installation script:
 *example*
 
 ```bash
-seal@dseal:~$ sudo chmod +x ./wsl-dl-instance/install.sh && D=$(pwd) && sudo ./wsl-dl-instance/install.sh "$D"
+seal@dseal:~$ sudo chmod +x ./wsl-ubuntu-youtube-dl/install.sh && D=$(pwd) && sudo ./wsl-ubuntu-youtube-dl/install.sh "$D"
 ```
 
 *copy*
 
 ```bash
-sudo chmod +x ./wsl-dl-instance/install.sh && D=$(pwd) && sudo ./wsl-dl-instance/install.sh "$D"
+sudo chmod +x ./wsl-ubuntu-youtube-dl/install.sh && D=$(pwd) && sudo ./wsl-ubuntu-youtube-dl/install.sh "$D"
 ```
 
 All done!

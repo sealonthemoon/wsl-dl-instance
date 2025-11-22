@@ -3,7 +3,7 @@
 echo "---------------------------------------------"
 echo "==> Setting directories..."
 DIR=$1
-REPO="$DIR/wsl-dl-instance"
+REPO="$DIR/wsl-ubuntu-youtube-dl"
 
 echo "==> Installing packages..."
 sudo apt update -y && sudo apt upgrade -y

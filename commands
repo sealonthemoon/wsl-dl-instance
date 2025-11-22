@@ -13,7 +13,7 @@ sudo cp youtube-dl /usr/local/bin/
 sudo chmod a+rx /usr/local/bin/youtube-dl
 
 # Semi-automated install
-https://github.com/sealonthemoon/wsl-dl-instance/blob/main/README.md
+https://github.com/sealonthemoon/wsl-ubuntu-youtube-dl/blob/main/README.md
 
 # Update (alias must be set)
 sudo youtube-dl -U
